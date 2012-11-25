@@ -1,0 +1,40 @@
+link(rel='stylesheet', href='/stylesheets/style.css')
+p Example 3
+
+h2 Yogurts and Toppings
+
+mixin toppings(data)
+ ul.data
+   - each item in data
+
+     li= item.type
+
+mixin yogurts(data)
+ ul.data
+   - each item in data
+
+     li= item.type
+
+mixin flavors(data)
+ ul.data
+   - each item in data
+
+     li= item.type
+
+mixin yogurts_nest(data)
+ ul.data
+   - each item in data
+
+     li= item.type
+     mixin flavors(item.flavors)
+
+h2= name
+
+h3 Toppings
+mixin toppings(toppings)
+
+h3 Yogurts
+mixin yogurts(yogurts)
+
+h3 Yogurts with Flavors
+mixin yogurts_nest(yogurts)
